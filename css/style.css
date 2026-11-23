@@ -1,0 +1,192 @@
+* {
+    box-sizing: border-box;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+}
+
+:root {
+    color-scheme: light;
+    --ink: #263238;
+    --muted: #59666d;
+    --panel: #fffdf8;
+    --page: #f1eee6;
+    --accent: #526b5d;
+    --accent-dark: #3d5548;
+    --border: #d5cbb8;
+}
+
+body {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    line-height: 1.55;
+}
+
+.page-header {
+    padding: 1.5rem 1rem;
+    text-align: center;
+    color: #fffdf5;
+    background: #354f46;
+}
+
+.page-header h1 {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.8rem, 5vw, 2.6rem);
+    letter-spacing: 0.02em;
+}
+
+.page-header p {
+    margin: 0.4rem 0 0;
+    color: #e8e8d8;
+}
+
+main {
+    width: min(100% - 2rem, 1100px);
+    margin: 1.25rem auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.panel {
+    min-width: 0;
+    padding: 1.25rem;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgb(20 35 50 / 7%);
+}
+
+.panel h2 {
+    margin: 0 0 1rem;
+    color: #405b4c;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.4rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-weight: 700;
+}
+
+input {
+    display: block;
+    width: 100%;
+    min-height: 44px;
+    padding: 0.6rem 0.7rem;
+    border: 1px solid #9ba69e;
+    border-radius: 6px;
+    color: var(--ink);
+    background: #ffffff;
+    font-size: 1rem;
+}
+
+input:focus,
+button:focus-visible {
+    outline: 3px solid #d9b66f;
+    outline-offset: 2px;
+}
+
+.field {
+    margin-bottom: 0.9rem;
+}
+
+.help-text {
+    margin: 0.45rem 0 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+button {
+    min-height: 44px;
+    padding: 0.65rem 1rem;
+    border: 0;
+    border-radius: 6px;
+    color: #ffffff;
+    background: var(--accent);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--accent-dark);
+}
+
+.message {
+    min-height: 1.5em;
+    margin: 0.75rem 0 0;
+    font-weight: 700;
+}
+
+.message.error {
+    color: #a32121;
+}
+
+.message.success {
+    color: #245b36;
+}
+
+#loot-list {
+    margin: 0;
+    padding-left: 1.35rem;
+}
+
+#loot-list li {
+    padding: 0.25rem 0;
+    overflow-wrap: anywhere;
+}
+
+.empty-state {
+    color: var(--muted);
+}
+
+.total-line,
+.results {
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border);
+}
+
+.results p {
+    margin: 0.45rem 0;
+}
+
+.logic-figure {
+    margin: 1rem 0 0;
+}
+
+.logic-figure img {
+    display: block;
+    width: 100%;
+    max-width: 760px;
+    height: auto;
+    margin: 0 auto;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.logic-figure figcaption {
+    margin-top: 0.5rem;
+    color: var(--muted);
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+footer {
+    padding: 0.75rem 1rem 1.5rem;
+    color: var(--muted);
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    main {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: stretch;
+    }
+
+    .reflection {
+        grid-column: 1 / -1;
+    }
+}
